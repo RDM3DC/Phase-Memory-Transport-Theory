@@ -9,34 +9,35 @@ Roadmap for developing Phase-Memory Transport Theory as a standalone research/pr
 - [x] Fill README
 - [x] Add standalone PMT paper
 - [x] Add notation guide
-- [ ] Add first minimal simulation
-- [ ] Add plots and figures
+- [x] Add first minimal simulation
+- [x] Add plots and figures
 
 ---
 
 ## v0.2 — Toy Simulations
 
-- [ ] 1D phase-memory transport simulation
-- [ ] 2D phase-memory channel simulation
-- [ ] Compare memory laws:
+- [x] 1D phase-memory transport simulation
+- [x] 2D phase-memory channel simulation
+- [x] Compare memory laws:
   - `ξ(∂θ/∂t)^2`
   - `ξ|∇θ|^2`
   - mixed phase-gradient laws
-- [ ] Add visualization scripts
+- [x] Add visualization scripts
 
 ---
 
 ## v0.3 — Coupling to ACFN
 
-- [ ] Couple PMT to Adaptive Curvature Flow Networks
-- [ ] Add four-field solver for `G, κ, θ, M`
+- [x] Couple PMT to Adaptive Curvature Flow Networks
+- [x] Add four-field solver for `G, κ, θ, M`
 - [ ] Visualize adaptive phase-memory geodesics
-- [ ] Track persistence and channel stability
+- [x] Track persistence and channel stability metrics
 
 ---
 
 ## v0.4 — Applications
 
+- [x] Add first application mapping notes
 - [ ] RF routing toy model
 - [ ] Adaptive optics toy model
 - [ ] AdaptiveCAD path-routing example

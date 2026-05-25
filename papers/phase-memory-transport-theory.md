@@ -70,7 +70,7 @@ G, κ, θ, M
 A compact PMT model is:
 
 ```text
-∂θ/∂t = ω − γ ∇·(G ∇θ)
+∂θ/∂t = ω + γ ∇·(G ∇θ)
 ```
 
 ```text
@@ -98,7 +98,7 @@ dG/dt = α|I| − μG + λ|∇κ| + σM
 
 ∂κ/∂t = η ∇·(G ∇κ) − βκ
 
-∂θ/∂t = ω − γ ∇·(G ∇θ)
+∂θ/∂t = ω + γ ∇·(G ∇θ)
 
 ∂M/∂t = ξ(∂θ/∂t)² − ρM
 ```
@@ -126,7 +126,7 @@ Phase-Lift gives branch-aware semantics:
 PMT gives dynamics to the resolved phase `θ_R`:
 
 ```text
-∂θ_R/∂t = ω − γ ∇·(G ∇θ_R)
+∂θ_R/∂t = ω + γ ∇·(G ∇θ_R)
 ```
 
 So:
@@ -243,7 +243,7 @@ Pseudo-code:
 initialize θ, M, G
 for each time step:
     G_eff = G*(1 + σ*M)
-    θ_t = ω - γ*div(G_eff*grad(θ))
+    θ_t = ω + γ*div(G_eff*grad(θ))
     M_t = ξ*θ_t**2 - ρ*M
     θ += dt*θ_t
     M += dt*M_t
@@ -272,9 +272,19 @@ PMT defines a general adaptive transport theory in which phase evolution writes 
 
 ## 12. Next Work
 
-- Build numerical toy models
-- Plot phase-memory channel formation
-- Compare memory-write laws
-- Couple PMT to ACFN curvature fields
-- Add stability metrics
-- Explore RF, optics, QPS, and AdaptiveCAD examples
+Implemented repository artifacts now include:
+
+- stable 1D numerical toy model
+- 2D phase-memory channel toy model
+- generated 1D field figure and CSV outputs
+- memory-write law comparison for phase-rate, gradient, and mixed laws
+- coupled ACFN/PMT four-field toy solver
+- finite-run, contrast, persistence, roughness, and conductance diagnostics
+- first RF, optics, QPS, and AdaptiveCAD application mapping notes
+
+Open next work:
+
+- visualize adaptive phase-memory geodesics
+- turn the application sketches into separate RF, optics, QPS, and AdaptiveCAD toy models
+- add simulation validation criteria for channel persistence
+- study nonlinear stability with `G_eff = G(1+σM)` inside the full PDE

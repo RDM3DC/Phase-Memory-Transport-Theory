@@ -52,7 +52,7 @@ it changes the system that future phase moves through.
 A compact PMT model is:
 
 ```text
-∂θ/∂t = ω − γ ∇·(G ∇θ)
+∂θ/∂t = ω + γ ∇·(G ∇θ)
 ```
 
 ```text
@@ -88,10 +88,12 @@ dG/dt = α|I| − μG + λ|∇κ| + σM
 
 ∂κ/∂t = η ∇·(G ∇κ) − βκ
 
-∂θ/∂t = ω − γ ∇·(G ∇θ)
+∂θ/∂t = ω + γ ∇·(G ∇θ)
 
 ∂M/∂t = ξ(∂θ/∂t)² − ρM
 ```
+
+The numerical examples use this diffusive sign convention. In graph notation this is equivalent to `dθ/dt = ω − γL_Gθ` with a positive weighted Laplacian `L_G`.
 
 with recurring state variables:
 
@@ -109,13 +111,42 @@ M  → memory
 ```text
 Phase-Memory-Transport-Theory/
 ├── README.md
+├── requirements.txt
 ├── papers/
-│   └── phase-memory-transport-theory.md
+│   ├── phase-memory-transport-theory.md
+│   └── pmt-proof-and-solution-package.md
 ├── docs/
+│   ├── application-sketches.md
 │   ├── notation.md
 │   └── roadmap.md
+├── figures/
+│   ├── memory_law_comparison.csv
+│   ├── pmt_1d_fields.csv
+│   ├── pmt_1d_fields.svg
+│   └── pmt_2d_memory.pgm
+├── tests/
+│   └── test_examples.py
 └── examples/
-    └── minimal_pmt_sim.py
+    ├── acfn_pmt_coupled_solver.py
+    ├── generate_pmt_figures.py
+    ├── minimal_pmt_sim.py
+    ├── pmt_2d_channel_sim.py
+    ├── pmt_memory_law_comparison.py
+    └── reduced_pmt_solver.py
+```
+
+---
+
+## Running the Numerical Examples
+
+```powershell
+python -m pip install -r requirements.txt
+python examples/minimal_pmt_sim.py
+python examples/pmt_memory_law_comparison.py
+python examples/generate_pmt_figures.py
+python examples/acfn_pmt_coupled_solver.py
+python examples/pmt_2d_channel_sim.py
+python -m unittest discover -s tests -v
 ```
 
 ---
@@ -140,8 +171,8 @@ The standalone purpose of this repository is to develop PMT into:
 
 ## Status
 
-**Version:** 0.1.0-draft  
-**Status:** Early standalone scaffold  
+**Version:** 0.2.0-draft  
+**Status:** Numerical toy-model scaffold  
 **Canonical role:** Arm 7 — adaptive phase-memory transport
 
 ---

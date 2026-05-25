@@ -26,10 +26,10 @@ This document proves the first rigorous core of PMT:
 
 ## 1. Minimal PMT System
 
-The basic PMT equations are
+The basic PMT equations in the diffusive simulation convention are
 
 ```text
-∂θ/∂t = ω − γ ∇·(G∇θ)
+∂θ/∂t = ω + γ ∇·(G∇θ)
 ```
 
 ```text

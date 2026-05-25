@@ -45,7 +45,7 @@ Canonical notation for Phase-Memory Transport Theory.
 ## Canonical PMT Equations
 
 ```text
-∂θ/∂t = ω − γ ∇·(G ∇θ)
+∂θ/∂t = ω + γ ∇·(G ∇θ)
 ```
 
 ```text
@@ -69,8 +69,10 @@ dG/dt = α|I| − μG + λ|∇κ| + σM
 ```
 
 ```text
-∂θ/∂t = ω − γ ∇·(G ∇θ)
+∂θ/∂t = ω + γ ∇·(G ∇θ)
 ```
+
+The examples use the diffusive sign convention above. On graphs, the equivalent form is `dθ/dt = ω − γL_Gθ` for a positive weighted Laplacian `L_G`.
 
 ```text
 ∂M/∂t = ξ(∂θ/∂t)² − ρM
